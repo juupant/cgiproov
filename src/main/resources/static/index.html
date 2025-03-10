@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Booking System</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Flight Booking System</h1>
+        </header>
+
+        <main>
+            <!-- Flight Search Section -->
+            <section id="flight-search">
+                <h2>Search Flights</h2>
+                <form id="search-form">
+                    <div class="form-group">
+                        <label for="destination">Destination:</label>
+                        <input type="text" id="destination" name="destination" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date">Date:</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="price-range">Price Range:</label>
+                        <input type="range" id="price-range" name="price-range" min="0" max="1000" step="50">
+                        <span id="price-display">€500</span>
+                    </div>
+
+                    <button type="submit">Search Flights</button>
+                </form>
+            </section>
+
+            <!-- Flight Results Section -->
+            <section id="flight-results" class="hidden">
+                <h2>Available Flights</h2>
+                <div id="flights-list"></div>
+            </section>
+
+            <!-- Seat Selection Section -->
+            <section id="seat-selection" class="hidden">
+                <h2>Select Your Seat</h2>
+                <div class="preferences">
+                    <h3>Seat Preferences</h3>
+                    <label>
+                        <input type="checkbox" id="window-seat"> Window Seat
+                    </label>
+                    <label>
+                        <input type="checkbox" id="extra-legroom"> Extra Legroom
+                    </label>
+                    <label>
+                        <input type="checkbox" id="near-exit"> Near Exit
+                    </label>
+                </div>
+                
+                <!-- Seat Map Legend -->
+                <div class="seat-legend">
+                    <div class="legend-item">
+                        <div class="legend-seat available"></div>
+                        <span>Available</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-seat occupied"></div>
+                        <span>Occupied</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-seat recommended"></div>
+                        <span>Recommended</span>
+                    </div>
+                </div>
+
+                <div id="seat-map"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 
